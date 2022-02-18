@@ -16,7 +16,6 @@ alias sz="source ~/.zshrc; clear;";
 alias gc="git commit -m";
 alias gcs="git commit -S -m";
 alias gs="git status";
-alias gp="git pull";
 alias gf="git fetch";
 alias gpush="git push";
 alias gd="git diff";
