@@ -35,4 +35,10 @@ mg () { mkdir "$@" && cd "$@" || exit; }
 cdl() { cd "$@" && ll; }
 killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
 
-
+function react_hot_server {
+  if [ -z ${1+x} ]; then 
+    GIT_POD_URL=$(tailscale ip -4 gitpod-manoj-kumar-maharana-contexalyze) npm start --prefix react_frontend;
+  else 
+    GIT_POD_URL=$(tailscale ip -4 gitpod-manoj-kumar-maharana-contexalyze) npm start --prefix "$1/react_frontend"
+  fi
+}
